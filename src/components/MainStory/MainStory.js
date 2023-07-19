@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
+import { QUERIES } from '../../constants';
+
 const MainStory = ({
   id,
   title,
@@ -18,13 +20,23 @@ const MainStory = ({
       <Abstract>
         <Location>{location}</Location> — {abstract}
       </Abstract>
-      <ReadMore href="/story">Continue Reading…</ReadMore>
+      <ReadMore href={`/story/${id}`}>Continue Reading…</ReadMore>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
+
+  --text-lines: 7;
+
+  @media ${QUERIES.tabletAndUp} {
+    --text-lines: 13;
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    --text-lines: 7;
+  }
 `;
 
 const Image = styled.img`
@@ -44,6 +56,12 @@ const Abstract = styled.p`
   font-size: 1rem;
   margin-bottom: 1em;
   white-space: pre-wrap;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--text-lines);
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const Location = styled.span`
