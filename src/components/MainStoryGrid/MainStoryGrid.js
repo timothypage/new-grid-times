@@ -7,6 +7,8 @@ import {
   SECONDARY_STORIES,
 } from '../../data';
 
+import { COLORS } from '../../constants.js';
+
 import SectionTitle from '../SectionTitle';
 import MainStory from '../MainStory';
 import SecondaryStory from '../SecondaryStory';
@@ -23,7 +25,7 @@ const MainStoryGrid = () => {
       <SecondaryStorySection>
         <StoryList>
           {SECONDARY_STORIES.map((story, index) => (
-            <SecondaryStory key={story.id} {...story} />
+            <PaddedSecondaryStory key={story.id} {...story} />
           ))}
         </StoryList>
       </SecondaryStorySection>
@@ -53,6 +55,14 @@ const Wrapper = styled.div`
     'advertisement';
   gap: 48px;
   margin-bottom: 48px;
+`;
+
+const PaddedSecondaryStory = styled(SecondaryStory)`
+  padding-block: 16px;
+
+  &:not(:first-of-type) {
+    border-top: 1px solid ${COLORS.gray[300]};
+  }
 `;
 
 const MainStorySection = styled.section`

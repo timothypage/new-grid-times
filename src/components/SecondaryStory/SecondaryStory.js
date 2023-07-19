@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-const SecondaryStory = ({ id, title, image, location, abstract }) => {
+const SecondaryStory = ({ id, title, image, location, abstract, className }) => {
   return (
-    <a href={`/story/${id}`}>
+    <a href={`/story/${id}`} className={className}>
       <Wrapper>
         <Image alt={image.alt} src={image.src} />
         <Heading>{title}</Heading>
