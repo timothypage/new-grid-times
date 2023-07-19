@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-const MiniStory = ({ id, image, title }) => {
+const MiniStory = ({ id, image, title}) => {
   return (
     <a href={`/story/${id}`}>
       <Wrapper>
