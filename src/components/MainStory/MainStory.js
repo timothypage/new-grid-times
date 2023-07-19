@@ -35,7 +35,7 @@ const Wrapper = styled.article`
   }
 
   @media ${QUERIES.laptopAndUp} {
-    --text-lines: 7;
+    --text-lines: 10;
   }
 `;
 

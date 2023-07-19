@@ -7,7 +7,7 @@ import MarketCard from '../MarketCard';
 import SectionTitle from '../SectionTitle';
 import MiniStory from '../MiniStory';
 
-import { QUERIES } from '../../constants';
+import { COLORS, QUERIES } from '../../constants';
 
 const SpecialtyStoryGrid = () => {
   return (
@@ -49,9 +49,18 @@ const SpecialtyStoryGrid = () => {
 const Wrapper = styled.div`
   display: grid;
   gap: 48px;
+
+  @media ${QUERIES.laptopAndUp} {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
 `;
 
-const MarketsSection = styled.section``;
+const MarketsSection = styled.section`
+  padding-right: 16px;
+  margin-right: 16px;
+  border-right: 1px solid ${COLORS.gray[300]};
+`;
 
 const MarketCards = styled.div`
   display: grid;

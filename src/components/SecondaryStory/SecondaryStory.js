@@ -28,7 +28,13 @@ const Wrapper = styled.article`
     grid-template-areas: 
       'image image'
       'heading heading'
-      'abstract abstract'
+      'abstract abstract';
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    grid-template-areas:
+      'image heading'
+      'image abstract';
   }
 
 `;
